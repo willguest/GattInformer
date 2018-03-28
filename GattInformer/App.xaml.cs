@@ -1,30 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Diagnostics;
-using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 
-namespace BluAdvert
+namespace GattInformer
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
     /// </summary>
-    sealed partial class App : Application
+    public partial class App : Application
     {
-        
 
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
@@ -96,11 +84,10 @@ namespace BluAdvert
         /// <param name="e">Details about the suspend request.</param>
         private void OnSuspending(object sender, SuspendingEventArgs e)
         {
-            Debug.WriteLine("suspending");
-            var deferral = e.SuspendingOperation.GetDeferral();
-            //TODO: Save application state and stop any background activity
-            //BluAdvert.MainPage.
+            MainPage mp = new MainPage();
+            mp.CloseApplication();
 
+            var deferral = e.SuspendingOperation.GetDeferral();
             deferral.Complete();
         }
     }

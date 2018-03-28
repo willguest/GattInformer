@@ -1,0 +1,71 @@
+﻿<Page x:Class="GattInformer.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GattInformer"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Width="500" Height="460" Foreground="#FFD5E688" RequestedTheme="Dark" UseLayoutRounding="False" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+    <Grid x:Name="layoutGrid" Height="460" VerticalAlignment="Top" Background="#FF070315" Margin="0" HorizontalAlignment="Left" Width="500" BorderThickness="1" CornerRadius="3" BorderBrush="#FF488DA6">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2.2*"/>
+            <RowDefinition Height="4*"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+        <Border BorderBrush="#FF1F7DBD" BorderThickness="1" Height="102" Margin="289,0,0,3.707" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="205"/>
+        <Button x:Name="btnGetServices" Content="Get&#xD;&#xA;Services" HorizontalAlignment="Left" Margin="182,35,0,33.2" VerticalAlignment="Stretch" Width="65" Click="GetServices_Click" Background="#FFD3C170" FontSize="12" VerticalContentAlignment="Top" BorderThickness="-4,0,-4,-4" BorderBrush="#FFC1D448" Foreground="#FF1B0D59" Padding="8,5,8,4" FontWeight="Bold" IsEnabled="False" Height="45"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="11" Width="70" Height="20" VerticalAlignment="Top" Margin="300,52,0,0" Text="Device Status"/>
+        <TextBlock HorizontalAlignment="Left" Margin="300,88,0,0" TextWrapping="Wrap" FontSize="11" Width="70" Height="20" VerticalAlignment="Top">
+            <Run Text="Gatt S"/>
+            <Run Text="tatus"/>
+        </TextBlock>
+        <TextBlock Margin="12,6,0,0" Grid.Row="2" TextWrapping="Wrap" Width="100" FontSize="14" Height="20" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Padding="0" CharacterSpacing="10" Text="Characteristics" FontWeight="Bold" Foreground="#FF77DABF"/>
+        <TextBlock x:Name="txtDevice" HorizontalAlignment="Left" Margin="380,10,0,85.2" TextWrapping="Wrap" Text="-" FontSize="14" Width="100" FontWeight="Bold" Height="20"/>
+        <TextBlock x:Name="txtFirmware" Margin="89,2.8,220.4,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="27" Foreground="#A59AFB76" FontSize="9" Grid.Row="1">
+            <Run Text="Main Data Service UUID: "/>
+            <LineBreak/>
+            <Run Text="6E400001-B5A3-F393-E0A9-E50E24DCCA9E"/>
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="300,70,0,0" Text="No. Services" TextWrapping="Wrap" Height="16" Width="70" VerticalAlignment="Top" FontSize="11"/>
+        <TextBlock HorizontalAlignment="Left" Margin="300,34,0,59.2" TextWrapping="Wrap" Text="BT Addr.:" Width="60" FontSize="11"/>
+        <TextBlock x:Name="txtBTAddr" HorizontalAlignment="Left" Margin="380,34,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" FontSize="10" Width="90" Height="20"/>
+        <Button x:Name="btnStartDataStream" Content="Start Data" HorizontalAlignment="Left" Margin="12,0,0,5" VerticalAlignment="Bottom" Width="90" Background="#FFD3C170" FontSize="12" VerticalContentAlignment="Top" BorderThickness="0,4,0,-4" BorderBrush="#FFC1D448" Foreground="#FF1B0D59" Grid.Row="2" Padding="8,0,8,4" FontWeight="Bold" UseLayoutRounding="False" Click="btnStartDataStream_Click" Height="25"/>
+        <TextBlock x:Name="txtServCnt" HorizontalAlignment="Left" Margin="380,70,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" FontSize="11" Width="90" Height="20"/>
+        <TextBlock x:Name="txtServStat" HorizontalAlignment="Left" Margin="380,88,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" FontSize="11" Width="87" Height="16"/>
+        <TextBlock x:Name="txtDevConnStat" HorizontalAlignment="Left" Margin="380,52,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" FontSize="11" Width="90" Height="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="220,42,0,0" TextWrapping="Wrap" Text="Device Info" VerticalAlignment="Top" Height="28.297" Width="105.974" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" FontSize="16" Padding="10,0,5,0" FontWeight="Bold" Foreground="#FF55A7E0">
+            <TextBlock.RenderTransform>
+                <CompositeTransform Rotation="-90.337"/>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <Button x:Name="btnStopDataStream" Content="Stop Data" HorizontalAlignment="Left" Margin="136,0,0,5" VerticalAlignment="Bottom" Width="90" Background="#FFD3C170" FontSize="12" VerticalContentAlignment="Top" BorderThickness="0,4,0,-4" BorderBrush="#FFC1D448" Foreground="#FF1B0D59" Grid.Row="2" Padding="8,0,8,4" FontWeight="Bold" UseLayoutRounding="False" Click="btnStopDataStream_Click" Height="25"/>
+        <TextBlock HorizontalAlignment="Left" Margin="275,6,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF45D645" FontSize="14">
+            <Run Text="Updates"/>
+        </TextBlock>
+        <TextBlock x:Name="txtUpdate" Margin="275,35,4.4,5" Grid.Row="2" TextWrapping="Wrap" Text="..." FontSize="10" Foreground="#FF45D645"/>
+        <Button x:Name="btnDisconnect"  Click="btnDisconnect_Click" Content="Disconnect" HorizontalAlignment="Left" Margin="183,86,0,5" VerticalAlignment="Stretch" Width="65" Background="#FFD3C170" FontSize="11" BorderThickness="-4" BorderBrush="#FFC1D448" Foreground="#FF1B0D59" Padding="0" FontWeight="Bold" Height="18"/>
+        <TextBlock x:Name="txtTimer" HorizontalAlignment="Left" Margin="103,198.4,0,0" Grid.Row="2" TextWrapping="Wrap" Text="0.00" VerticalAlignment="Top" Width="30" TextAlignment="Center" FontSize="10"/>
+        <TextBlock x:Name="txtCharacs" HorizontalAlignment="Left" Margin="12,35,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Height="147" Width="235" Text="-" FontSize="11" Foreground="#FF77DABF"/>
+        <Button Content="Clear" HorizontalAlignment="Left" Margin="438,6,0,0" Grid.Row="2" VerticalAlignment="Top" Height="22" Width="39" FontSize="10"  Padding="2,1,2,2" Click="btnClearUpdate_Click"/>
+        <TextBlock x:Name="txtServices" HorizontalAlignment="Left" Margin="12,34,0,5" TextWrapping="Wrap" Width="260" Text="-" FontSize="11" Grid.Row="1" Height="80"/>
+        <TextBlock x:Name="txtSpotted" HorizontalAlignment="Left" Margin="12,35,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Height="70" Width="165" Foreground="#FF7CDA3B" FontSize="12"/>
+        <TextBox x:Name="txtToFind" HorizontalAlignment="Left" Margin="110,10,0,85.2" TextWrapping="Wrap" Text="..." TextAlignment="Right" GotFocus="txtToFind_GotFocus"  Height="15" Width="70" BorderBrush="{x:Null}" FontSize="11" FontWeight="Bold" Padding="2,0,2,0" MinHeight="0" Foreground="#FF34A45D" MinWidth="0" Background="#661D3ECF" BorderThickness="0,0,2,0"/>
+        <TextBlock Margin="12,6,0,0" TextWrapping="Wrap" Width="80" FontSize="14" Height="20" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Padding="0" CharacterSpacing="10" Text="Devices" FontWeight="Bold" Foreground="#FF7CDA3B"/>
+        <TextBlock Margin="12,6,0,0" TextWrapping="Wrap" Width="80" FontSize="14" Height="20" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Padding="0" CharacterSpacing="10" Text="Services" FontWeight="Bold" Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="300,10,0,0" TextWrapping="Wrap" Height="20" Width="60" VerticalAlignment="Top" FontSize="14" FontWeight="Bold">
+            <Run FontSize="12" Text="Name"/>
+        </TextBlock>
+        <Button x:Name="btnFilterDevices" Content="Filter" HorizontalAlignment="Left" Margin="182,5,0,80.2" VerticalAlignment="Stretch" Width="65" Click="btnFilterDevices_Click" Background="#FFD3C170" FontSize="12" VerticalContentAlignment="Top" BorderThickness="-4,0,-4,-4" BorderBrush="#FFC1D448" Foreground="#FF1B0D59" Padding="0" FontWeight="Bold" Height="18"/>
+        <ListView Height="122" Margin="0,1.293,-1,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Right" Width="220" Grid.RowSpan="2">
+            <ItemsPresenter Height="82" Width="220" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        </ListView>
+    </Grid>
+
+
+</Page>
+    

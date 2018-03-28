@@ -1,8 +1,8 @@
 ﻿<Application
-    x:Class="BluAdvert.App"
+    x:Class="GattInformer.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:BluAdvert"
+    xmlns:local="using:GattInformer"
     RequestedTheme="Light">
 
 </Application>
