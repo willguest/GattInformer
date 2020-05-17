@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3" IgnorableNamespaces="uap mp uap3">
   <Identity Name="e4f2be29-67d0-439a-bd67-43006607fc61" Publisher="CN=16102434" Version="1.0.0.0" />
   <mp:PhoneIdentity PhoneProductId="e4f2be29-67d0-439a-bd67-43006607fc61" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
@@ -23,6 +23,11 @@
     </Application>
   </Applications>
   <Capabilities>
+    <DeviceCapability Name="bluetooth.rfcomm">
+      <Device Id="any">
+        <Function Type="name:serialPort" />
+      </Device>
+    </DeviceCapability>
     <DeviceCapability Name="bluetooth" />
   </Capabilities>
 </Package>
