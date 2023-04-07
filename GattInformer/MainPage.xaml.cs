@@ -213,7 +213,7 @@ namespace GattInformer
             // BLE Advert Watcher
             BleWatcher = new BluetoothLEAdvertisementWatcher();
             BleWatcher.ScanningMode = BluetoothLEScanningMode.Active;
-            BleWatcher.SignalStrengthFilter.InRangeThresholdInDBm = -65;
+            BleWatcher.SignalStrengthFilter.InRangeThresholdInDBm = -80;
             BleWatcher.SignalStrengthFilter.OutOfRangeTimeout = TimeSpan.FromSeconds(1);
 
             BleWatcher.Received += WatcherOnReceived;
@@ -278,7 +278,10 @@ namespace GattInformer
                 storedDeviceName = addressBook[kvp.Key];
             }
 
+            Console.WriteLine("starting button creation");
+
             await this.Dispatcher.RunAsync(
+
                 Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
                 {
                     Button newBtn = new Button();
@@ -298,7 +301,6 @@ namespace GattInformer
                     newBtn.IsTextScaleFactorEnabled = true;
                     newBtn.FontSize = 12;
                     newBtn.BorderBrush = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.WhiteSmoke);
-                    newBtn.BorderThickness = new Thickness(1);
                     newBtn.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Colors.DarkSlateGray);
                     newBtn.Click += DeviceButtonClick;
 
@@ -402,8 +404,11 @@ namespace GattInformer
         {
             try
             {
-                gatt = await subject.GetGattServicesAsync(BluetoothCacheMode.Uncached);
-                _txtUpdate += Environment.NewLine + ("Probing device: " + subject.Name);
+                if (subject != null)
+                {
+                    gatt = await subject.GetGattServicesAsync(BluetoothCacheMode.Uncached);
+                    _txtUpdate += Environment.NewLine + ("Probing device: " + subject.Name);
+                }
             }
             catch
             {

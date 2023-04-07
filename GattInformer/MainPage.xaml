@@ -10,7 +10,6 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="149*"/>
             <RowDefinition Height="220*"/>
-
             <RowDefinition Height="149*"/>
 
         </Grid.RowDefinitions>
@@ -19,8 +18,8 @@
         </Grid.ColumnDefinitions>
 
         <Border BorderBrush="#FF1F7DBD" BorderThickness="1" Margin="336,1,2,3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="3,3,3,3"/>
-        <Button x:Name="btnGetServices" Content="Get Services" HorizontalAlignment="Left" Margin="350,125,10,15" VerticalAlignment="Stretch" Width="100" Click="GetServices_Click" Background="#FFD3C170" FontSize="14" VerticalContentAlignment="Stretch" BorderThickness="-4,0,-4,-4" BorderBrush="#FFC1D448" Foreground="#FF1B0D59" Padding="8,5,8,4" FontWeight="Bold" IsEnabled="False" Height="30"/>
-        <Button x:Name="btnPair" Click="PairDevice_Click" Content="Pair" HorizontalAlignment="Stretch" Margin="479,125,10,15" VerticalAlignment="Stretch" Background="#FFD3C170" FontSize="14" VerticalContentAlignment="Stretch" BorderThickness="-4,0,-4,-4" BorderBrush="#FFC1D448" Foreground="#FF1B0D59" Padding="8,5,8,4" FontWeight="Bold" IsEnabled="False" Height="30" Width="70" FontFamily="Segoe UI"/>
+        <Button x:Name="btnGetServices" Content="Get Services" HorizontalAlignment="Left" Margin="350,125,10,15" VerticalAlignment="Stretch" Width="100" Click="GetServices_Click" Background="#FFD3C170" FontSize="14" VerticalContentAlignment="Stretch" BorderBrush="#FFC1D448" Foreground="#FF1B0D59" Padding="8,5,8,4" FontWeight="Bold" IsEnabled="False" Height="30"/>
+        <Button x:Name="btnPair" Click="PairDevice_Click" Content="Pair" HorizontalAlignment="Stretch" Margin="479,125,10,15" VerticalAlignment="Stretch" Background="#FFD3C170" FontSize="14" VerticalContentAlignment="Stretch" BorderBrush="#FFC1D448" Foreground="#FF1B0D59" Padding="8,5,8,4" FontWeight="Bold" IsEnabled="False" Height="30" Width="70" FontFamily="Segoe UI"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="11" Width="70" Height="20" VerticalAlignment="Top" Margin="345,52,0,0" Text="Device Status"/>
         <TextBlock Margin="311,8.25,0,0" Grid.Row="1" TextWrapping="Wrap" Width="100" FontSize="14" Height="20" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Padding="0" CharacterSpacing="10" Text="Characteristics" FontWeight="Bold" Foreground="#FF77DABF" FontFamily="Segoe UI"/>
         <TextBlock HorizontalAlignment="Left" Margin="345,70,0,0" Text="No. Services" TextWrapping="Wrap" Height="16" Width="70" VerticalAlignment="Top" FontSize="11"/>
@@ -40,7 +39,7 @@
             <Run Text="Notification Data" FontFamily="Segoe UI" FontWeight="Bold"/>
         </TextBlock>
         <TextBlock x:Name="txtUpdate" Margin="11,40,0,10" Grid.Row="2" TextWrapping="Wrap" Text="..." FontSize="10" Foreground="#FF45D645" HorizontalAlignment="Left" Width="335"/>
-        <Button x:Name="btnRefresh"  Click="btnRefresh_Click" Content="Refresh" HorizontalAlignment="Left" Margin="240,14,0,140" VerticalAlignment="Stretch" Width="65" Background="#FFD3C170" FontSize="11" BorderThickness="-4" BorderBrush="#FFC1D448" Foreground="#FF1B0D59" Padding="0" FontWeight="Bold" Height="18"/>
+        <Button Click="btnRefresh_Click" Content="Refresh" HorizontalAlignment="Left" Margin="240,14,0,140" VerticalAlignment="Stretch" Width="65" Background="#FFD3C170" FontSize="11" BorderBrush="#FFC1D448" Foreground="#FF1B0D59" Padding="0" FontWeight="Bold" Height="18"/>
         <TextBlock x:Name="txtTimer" HorizontalAlignment="Left" Margin="135,7.75,0,0" Grid.Row="3" TextWrapping="Wrap" Text="0.00" VerticalAlignment="Top" Width="30" TextAlignment="Center" FontSize="10"/>
         <Button Content="Clear" HorizontalAlignment="Left" Margin="88,4.75,0,0" Grid.Row="3" VerticalAlignment="Top" Height="22" Width="39" FontSize="10"  Padding="2,1,2,2" Click="btnClearUpdate_Click"/>
         <TextBox x:Name="txtToFind" GotFocus="txtToFind_GotFocus" TextChanged="txtToFind_TextChanged" HorizontalAlignment="Left" Margin="89,15,0,142" Text="" TextAlignment="Left"  Height="15" Width="70" BorderBrush="{x:Null}" FontSize="11" FontWeight="Bold" Padding="2,0,2,0" MinHeight="0" Foreground="#FF34A45D" MinWidth="0" Background="#661D3ECF" BorderThickness="0,0,2,0" PlaceholderText="..." ToolTipService.ToolTip="Search" HorizontalContentAlignment="Left" VerticalAlignment="Stretch"/>
@@ -49,7 +48,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="345,10,0,0" TextWrapping="Wrap" Height="20" Width="60" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" FontFamily="Segoe UI">
             <Run FontSize="12" Text="Name"/>
         </TextBlock>
-        <Button x:Name="btnFilterDevices" Content="Filter" HorizontalAlignment="Left" Margin="169,14,0,140" VerticalAlignment="Stretch" Width="65" Click="btnFilterDevices_Click" Background="#FFD3C170" FontSize="12" VerticalContentAlignment="Top" BorderThickness="-4,0,-4,-4" BorderBrush="#FFC1D448" Foreground="#FF1B0D59" Padding="0" FontWeight="Bold"/>
+        <Button x:Name="btnFilterDevices" Content="Filter" HorizontalAlignment="Left" Margin="169,14,0,140" VerticalAlignment="Stretch" Width="65" Click="btnFilterDevices_Click" Background="#FFD3C170" FontSize="12" VerticalContentAlignment="Top" BorderBrush="#FFC1D448" Foreground="#FF1B0D59" Padding="0" FontWeight="Bold"/>
         <ScrollViewer Margin="0,40,8,9" Grid.Row="1" HorizontalAlignment="Right" Width="270" VerticalScrollMode="Enabled" HorizontalScrollMode="Disabled" Height="200">
             <StackPanel x:Name ="spCharacs" HorizontalAlignment="Right" Width="270" VerticalAlignment="Top" Height="50"/>
         </ScrollViewer>
